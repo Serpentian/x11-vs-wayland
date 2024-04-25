@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/serif.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+        <style>
+.container {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically aligns items in the middle */
+    justify-content: space-between; /* Places space between the text and the image */
+    padding: 20px; /* Adds padding around the content */
+}
+.container p {
+    flex: 1; /* Allows the text block to grow and shrink as needed */
+    margin-right: 50px; /* Adds space between the text and the image */
+}
+
+.container img {
+   max-width: 50%; /* Limits the image width to 40% of the container */
+   height: auto; /* Keeps the image aspect ratio */
+}
+
+.text {
+   display: inline-block;
+   font-size: 0.7em;
+   line-height: 1.2em;
+   vertical-align: top;
+   text-align: left;
+}
+        </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                <img src="assets/slide_1.png" height="300">
+                <h3> Вперед в будущее: <br> Wayland vs X11</h3>
+                <p><small>Железцов Н. и Ясенко Д.<br>ИУ8-74</small></p>
+                </section>
+                <section>
+                    <h4> Display server </h4>
+                    <div class="container">
+                        <p class="text"><b>Дисплей сервер</b> - это программа, обеспечивающая стандартные инструменты и протоколы для построения графического интерфейса пользователя. <br><br> Дисплей сервер общается с клиентами по какому либо протоколу (Wayland или X11)</p>
+                        <img src="assets/slide_2.png">
+                    </div>
+                </section>
+                <section>
+                    <div class="r-stack">
+                        <img class="fragment" src="assets/slide_3_1.jpg" height="400">
+                        <img class="fragment" src="assets/slide_3_2.png" height="500">
+                        <img class="fragment" src="assets/slide_3_3.jpg" height="600">
+                        <img class="fragment" src="assets/slide_3_4.gif" height="700">
+                    </div>
+                </section>
+                <section>
+                     <h4> История иксов </h4>
+                     <img src="assets/slide_4.png" height="500">
+                </section>
+
+                <section>
+                    <h4> Как работает X</h4>
+                    <div class="container">
+                        <p class="text">
+                        X Window System — дисплей протокол, появившийся в 1984. <br><br>
+X11 — последняя версия X Window System, появивишаяся в 1987.<br><br>
+X.Org Server — каноничная реализация серверной части X Window System<br><br>
+Xlib — каноничная реализация клиентской части X Window System<br><br>
+                        </p>
+                        <img src="assets/slide_5.png">
+                    </div>
+                </section>
+                <section>
+                    <h4> Недостатки X11 </h4>
+                    <ul class="text">
+                        <li>Бесполезный посредник</li>
+                        <li>Отсутствие изоляции приложений и небезопасность</li>
+                        <li>Устаревшая кодовая база, невозможно работать</li>
+                        <li>Сложности работы с несколькими мониторами</li>
+                        <li>Отсутствие поддержки VRR</li>
+                        <li>Неплавность анимаций</li>
+                        <li>Тиринг</li>
+                        <li>И т.д.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4> Как работает Wayland</h4>
+                    <img src="assets/slide_6.png">
+                </section>
+                <section>
+                    <h4> Рендеринг </h4>
+                    <img src="assets/slide_7.png">
+                </section>
+                <section>
+                    <h4> Up to you (◉‿◉) </h3>
+                    <video data-autoplay class="r-stretch" src="assets/linux_unixporn.mp4" type="video/mp4"></video>
+                </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+                autoPlayMedia: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
